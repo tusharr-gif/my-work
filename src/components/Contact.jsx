@@ -1,5 +1,7 @@
-import React, { useRef } from 'react';
+
+import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { profileData } from '../data/profile';
 
 const Contact = () => {
   const ref = useRef(null);
@@ -33,7 +35,7 @@ const Contact = () => {
           className="bg-[#ff2a2a] w-full md:w-[85%] lg:w-[75%] p-8 md:p-16 text-white flex flex-col justify-between"
         >
           <div className="text-xs font-bold tracking-[0.2em] mb-12 md:mb-20 uppercase opacity-90">
-            Reach Us
+            Get In Touch
           </div>
 
           <form className="flex flex-col gap-12 md:gap-16 w-full">
@@ -81,27 +83,30 @@ const Contact = () => {
             {/* Bottom Section */}
             <div className="flex flex-col md:flex-row gap-12 mt-4">
               {/* Left text */}
-              <div className="flex-1 flex items-start gap-4 text-sm font-medium text-white/90">
-                <input 
-                  type="checkbox" 
-                  id="permission" 
-                  className="mt-1 w-4 h-4 rounded-sm border-white/40 bg-transparent text-white focus:ring-white focus:ring-offset-0 focus:ring-offset-transparent cursor-pointer" 
-                  style={{ accentColor: "white" }}
-                />
-                <label htmlFor="permission" className="cursor-pointer max-w-[280px] leading-snug">
-                  I give permission to contact me at this email address.
-                </label>
+              <div className="flex-1 flex flex-col gap-4 text-sm font-medium text-white/90">
+                <div className="flex items-start gap-4">
+                  <input
+                    type="checkbox"
+                    id="permission"
+                    className="mt-1 w-4 h-4 rounded-sm border-white/40 bg-transparent text-white focus:ring-white focus:ring-offset-0 focus:ring-offset-transparent cursor-pointer"
+                    style={{ accentColor: "white" }}
+                  />
+                  <label htmlFor="permission" className="cursor-pointer max-w-[280px] leading-snug">
+                    I give permission to contact me at this email address.
+                  </label>
+                </div>
               </div>
 
               {/* Right text & button */}
               <div className="flex-1 flex flex-col gap-8 text-xs text-white/70 font-medium">
-                <p className="leading-relaxed max-w-[400px]">
-                  This site is protected by reCAPTCHA and the Google <a href="#" className="underline hover:text-white transition-colors">Privacy Policy</a> and <a href="#" className="underline hover:text-white transition-colors">Terms of Service</a> apply.
-                </p>
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-6">
-                  <p className="max-w-[250px] leading-relaxed">
-                    For information on how to unsubscribe, please review our <a href="#" className="underline hover:text-white transition-colors">privacy policy</a>.
-                  </p>
+                  <div className="flex flex-col gap-2 max-w-[250px] leading-relaxed">
+                    <p className="font-bold text-white text-sm">Or reach me directly:</p>
+                    <a href={`mailto:${profileData.contact.email}`} className="hover:text-white transition-colors text-sm">{profileData.contact.email}</a>
+                    <a href={profileData.resume} target="_blank" rel="noreferrer" className="underline hover:text-white transition-colors mt-2 font-bold inline-block">
+                      Download Resume
+                    </a>
+                  </div>
                   
                   <button 
                     type="submit" 

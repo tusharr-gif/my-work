@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+
+import { useState, useEffect } from 'react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +18,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Contact'];
+  const navLinks = ['About', 'Skills', 'Projects', 'Experience', 'Achievements', 'Contact'];
 
   return (
     <nav 
@@ -25,7 +26,7 @@ const Navbar = () => {
         isOpen 
           ? 'bg-[#ff2a2a] py-4'
           : isScrolled 
-            ? 'bg-transparent py-4' 
+            ? 'bg-[#000000]/80 backdrop-blur-md py-4'
             : 'bg-transparent py-6'
       }`}
     >
@@ -34,7 +35,7 @@ const Navbar = () => {
         {/* Left Side: Logo/Name */}
         <div className="flex items-center">
           <a href="#" className="text-white text-2xl font-black tracking-tight">
-            Leeshark<span className="text-red-500">.</span>
+            Maniarasan<span className="text-red-500">.</span>
           </a>
         </div>
 
@@ -56,10 +57,11 @@ const Navbar = () => {
         {/* Right Side: CTA Button */}
         <div className="hidden md:block">
           <a 
-            href="#contact" 
+            href="/resume/Maniarasan_J_Resume.pdf"
+            target="_blank" rel="noreferrer"
             className="px-6 py-2.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold hover:bg-white/20 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-all duration-300 backdrop-blur-md"
           >
-            Hire Me
+            Resume
           </a>
         </div>
 
@@ -99,11 +101,12 @@ const Navbar = () => {
           ))}
           <div className="pt-4 pb-2">
              <a 
-               href="#contact" 
+               href="/resume/Maniarasan_J_Resume.pdf"
+               target="_blank" rel="noreferrer"
                onClick={() => setIsOpen(false)} 
                className="inline-block px-6 py-3 rounded-full bg-white text-[#ff2a2a] font-black hover:bg-black hover:text-white transition-colors w-full text-center shadow-lg"
              >
-               Hire Me
+               Resume
              </a>
           </div>
         </div>

@@ -1,13 +1,14 @@
-import React, { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 // Adjusted import path for the video
 import heroVideo from '../assets/hero video/Developer_introduces_self_and_sk…_202606051918.mp4';
+import { profileData } from '../data/profile';
 
 const Hero = () => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
+  const isMuted = false;
 
   useEffect(() => {
     AOS.init({
@@ -55,16 +56,24 @@ const Hero = () => {
             data-aos="fade-up"
             className="text-white text-3xl md:text-5xl font-bold mb-4 tracking-tight"
           >
-            Hi, I’m a <br /> <span className="text-transparent [-webkit-text-stroke:1.5px_black]">Full Stack Developer</span>
+            Hi, I'm <span className="text-transparent [-webkit-text-stroke:1.5px_black]">{profileData.name}</span>
           </h1>
 
           {/* Subheading */}
+          <div
+            data-aos="fade-up"
+            data-aos-delay="100"
+            className="text-[#ff2a2a] text-lg md:text-xl font-bold mb-2 tracking-wide uppercase drop-shadow-md"
+          >
+            {profileData.headline}
+          </div>
+
           <p 
             data-aos="fade-up"
             data-aos-delay="200"
-            className="text-white text-sm md:text-lg font-semibold mb-8 max-w-md drop-shadow-md"
+            className="text-white text-sm md:text-base font-semibold mb-8 max-w-lg drop-shadow-md leading-relaxed"
           >
-            I build fast, scalable and modern web applications using React, Node.js and Tailwind CSS.
+            {profileData.shortIntroduction}
           </p>
 
           {/* Buttons */}
@@ -74,14 +83,19 @@ const Hero = () => {
             className="flex flex-row flex-wrap items-center gap-3 w-full"
           >
             {/* Primary Button */}
-            <button className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-md">
-              View My Work
-            </button>
+            <a href="#projects" className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-md">
+              View Projects
+            </a>
             
             {/* Secondary Button - Glassmorphism style */}
-            <button className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-black/40 border border-white text-white font-semibold hover:bg-black/60 transition-all duration-300 backdrop-blur-md">
+            <a href={profileData.resume} target="_blank" rel="noreferrer" className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-black/40 border border-white text-white font-semibold hover:bg-black/60 transition-all duration-300 backdrop-blur-md">
+              Resume
+            </a>
+
+            {/* Tertiary Button - Glassmorphism style */}
+            <a href="#contact" className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-black/40 border border-white text-white font-semibold hover:bg-[#ff2a2a] hover:border-[#ff2a2a] transition-all duration-300 backdrop-blur-md">
               Contact Me
-            </button>
+            </a>
           </div>
         </div>
 

@@ -1,8 +1,5 @@
-import React from 'react';
 import stackImage from '../assets/about/image.png';
-import reactImage from '../assets/about/react.png';
-import nodeImage from '../assets/about/node.png';
-import mongoImage from '../assets/about/mongodb.png';
+import { profileData } from '../data/profile';
 
 const About = () => {
   return (
@@ -40,31 +37,29 @@ const About = () => {
         {/* Right Side: Info Content */}
         <div data-aos="fade-left" data-aos-delay="200" className="flex-1 text-white mt-8 md:mt-0 relative z-20">
           
-          <h2 className="text-4xl md:text-5xl font-black text-black mb-4">Hello!</h2>
-          <p className="text-lg font-bold mb-12 leading-relaxed max-w-3xl text-red-50">
-            Hi, my name is <span className="text-black text-xl font-black mx-1 tracking-wide uppercase">Leeshark</span>, a passionate full-stack developer based in [Location], dedicated to crafting clean, functional, and highly scalable web applications.
+          <h2 className="text-4xl md:text-5xl font-black text-black mb-4">About Me</h2>
+          <p className="text-lg font-bold mb-6 leading-relaxed max-w-3xl text-red-50">
+            {profileData.aboutMe}
+          </p>
+          <p className="text-lg font-bold mb-8 leading-relaxed max-w-3xl text-red-50">
+            {profileData.aboutConclusion}
           </p>
 
-          {/* Horizontal Skills Row (Transparent & Large) */}
-          <div className="flex items-center gap-10 mt-8">
-            <img 
-              data-aos="zoom-in" data-aos-delay="300"
-              src={reactImage} 
-              alt="React" 
-              className="w-20 h-20 md:w-24 md:h-24 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-2xl" 
-            />
-            <img 
-              data-aos="zoom-in" data-aos-delay="450"
-              src={nodeImage} 
-              alt="Node.js" 
-              className="w-20 h-20 md:w-24 md:h-24 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-2xl" 
-            />
-            <img 
-              data-aos="zoom-in" data-aos-delay="600"
-              src={mongoImage} 
-              alt="MongoDB" 
-              className="w-20 h-20 md:w-24 md:h-24 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-2xl" 
-            />
+          {/* Focus Areas List Instead of Images */}
+          <div className="mt-8">
+            <h3 className="text-xl font-black text-black mb-4">My focus is on:</h3>
+            <div className="flex flex-wrap gap-4">
+              {profileData.focusAreas.map((area, index) => (
+                <div
+                  key={index}
+                  data-aos="zoom-in"
+                  data-aos-delay={300 + (index * 50)}
+                  className="px-4 py-2 bg-black text-white font-bold rounded-lg shadow-md hover:scale-105 transition-transform duration-300 cursor-default"
+                >
+                  {area}
+                </div>
+              ))}
+            </div>
           </div>
 
         </div>

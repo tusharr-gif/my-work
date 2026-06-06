@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { motion, useScroll, useSpring, useMotionValueEvent } from 'framer-motion';
 
 const TagCard = ({ number, title, text, className, aosDelay, aosType, pathLength, containerRef }) => {
@@ -61,7 +61,7 @@ const TagCard = ({ number, title, text, className, aosDelay, aosType, pathLength
   );
 };
 
-const Services = () => {
+const Experience = () => {
   const containerRef = useRef(null);
   
   const { scrollYProgress } = useScroll({
@@ -73,7 +73,7 @@ const Services = () => {
 
   return (
     <section 
-      id="services"
+      id="experience"
       ref={containerRef}
       className="bg-white pt-24 pb-32 px-6 md:px-12 w-full relative overflow-hidden font-sans bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:80px_80px]"
     >
@@ -82,10 +82,10 @@ const Services = () => {
         {/* Header Content */}
         <div data-aos="fade-up" className="md:absolute top-10 left-0 md:w-[450px] z-20 mb-16 md:mb-0">
           <div className="inline-block border border-gray-300 rounded-full px-5 py-1.5 text-sm text-gray-600 font-bold mb-8 shadow-sm bg-white">
-            How we work
+            Education & Experience
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-[1.1] mb-6 tracking-tight relative">
-            Let us show you how we drive your brand to new heights
+            My Academic & Professional Journey
             {/* Hand-drawn arrow */}
             <svg className="absolute -bottom-10 right-10 w-12 h-12 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" className="hidden" />
@@ -93,7 +93,7 @@ const Services = () => {
             </svg>
           </h2>
           <p className="text-gray-500 text-base md:text-lg max-w-sm font-medium leading-relaxed">
-            We follow a structured, creative, and highly technical approach to turn your ideas into robust full-stack applications.
+            Building a strong foundation in Computer Applications, Data Engineering, and AI.
           </p>
         </div>
 
@@ -174,9 +174,9 @@ const Services = () => {
         <div className="flex flex-col gap-8 md:gap-12 items-center md:block relative z-10 w-full pt-4 md:pt-0 pb-12 md:pb-0">
           
           <TagCard 
-            number="01"
-            title="Define"
-            text="We start by understanding your goals, user requirements, and technical constraints to lay a rock-solid foundation for the project."
+            number="Current"
+            title="MCA @ Christ University"
+            text="Master of Computer Applications at Christ University Central Campus."
             className="md:absolute md:top-[10px] md:right-[5%] lg:right-[10%] rotate-2 md:rotate-6"
             aosType="fade-left"
             aosDelay="100"
@@ -185,9 +185,9 @@ const Services = () => {
           />
 
           <TagCard 
-            number="02"
-            title="Design"
-            text="Creating intuitive, pixel-perfect user interfaces and wireframes that guarantee an engaging and accessible user experience."
+            number="Completed"
+            title="B.Sc CS with Data Analytics"
+            text="B.Sc in Computer Science with a specialization in Data Analytics. Focus areas: Machine Learning, Statistics, Database Systems."
             className="md:absolute md:top-[450px] md:left-[5%] lg:left-[10%] -rotate-2 md:-rotate-6"
             aosType="fade-right"
             aosDelay="200"
@@ -196,9 +196,9 @@ const Services = () => {
           />
 
           <TagCard 
-            number="03"
-            title="Build"
-            text="Developing scalable frontend architectures and secure backend systems using the latest modern tech stack."
+            number="Projects"
+            title="Software & Data Experience"
+            text="Built multiple end-to-end projects involving Data Analytics, Machine Learning, Web Applications, and AI Systems."
             className="md:absolute md:top-[700px] md:right-[5%] lg:right-[15%] rotate-1 md:rotate-3"
             aosType="fade-left"
             aosDelay="300"
@@ -207,9 +207,9 @@ const Services = () => {
           />
 
           <TagCard 
-            number="04"
-            title="Launch"
-            text="Rigorous testing, optimization, and seamless deployment to cloud infrastructure, followed by ongoing support."
+            number="Hackathon"
+            title="Revelations Hackathon"
+            text="Built and presented the Stranger Things Upside Down Communicator within 5 hours."
             className="md:absolute md:top-[1050px] md:left-[15%] lg:left-[25%] -rotate-1 md:-rotate-3"
             aosType="fade-right"
             aosDelay="400"
@@ -223,7 +223,7 @@ const Services = () => {
             data-aos-delay="600"
             className="hidden md:block absolute top-[1250px] left-[60%] font-['Caveat',cursive] text-3xl text-gray-600 rotate-6"
           >
-            Ready to be delivered!
+            Continuous Learning!
           </div>
 
         </div>
@@ -233,4 +233,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Experience;
