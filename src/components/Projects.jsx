@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import amyronLogo from '../assets/projects/amyron.png';
+import smartpayLogo from '../assets/projects/smartpay.png';
 
 // ==========================================
 // 🚀 HOW TO ADD YOUR PROJECTS ONE BY ONE:
@@ -21,6 +22,17 @@ const projectsData = [
   },
   {
     id: 2,
+    title: "JANUIN - SmartPay Guardian",
+    category: "Web App",
+    description: "A secure, next-generation payment processing and fintech platform featuring real-time transaction protection, encryption, and a sleek checkout experience.",
+    image: smartpayLogo,
+    tech: ["React", "FinTech", "Tailwind CSS", "Security", "Vercel"],
+    github: "#",
+    live: "https://smartpay-guardian.vercel.app/",
+    featured: true
+  },
+  {
+    id: 3,
     title: "E-Commerce Suite & Analytics",
     category: "Full Stack",
     description: "A comprehensive e-commerce dashboard featuring real-time inventory tracking, payment gateway integration, and animated sales analytics.",
@@ -31,7 +43,7 @@ const projectsData = [
     featured: true
   },
   {
-    id: 2,
+    id: 4,
     title: "AI Video & Portfolio Generator",
     category: "Web App",
     description: "An AI-powered platform allowing users to generate stunning video portfolios from custom prompts and resume data with automated cloud rendering.",
@@ -42,7 +54,7 @@ const projectsData = [
     featured: true
   },
   {
-    id: 3,
+    id: 5,
     title: "Real-time Collaborative Workspace",
     category: "Full Stack",
     description: "A cloud workspace app featuring live multi-user editing, video rooms, interactive whiteboards, and instant Kanban board sync.",
@@ -53,7 +65,7 @@ const projectsData = [
     featured: false
   },
   {
-    id: 4,
+    id: 6,
     title: "Modern FinTech Banking App",
     category: "UI/UX",
     description: "A sleek, dark-mode financial dashboard design with custom interactive charts, crypto tracking, and instant peer-to-peer transfers.",
