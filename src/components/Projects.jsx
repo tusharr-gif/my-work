@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import amyronLogo from '../assets/projects/amyron.png';
 import smartpayLogo from '../assets/projects/smartpay.png';
+import novacityLogo from '../assets/projects/novacity.png';
 
 // ==========================================
 // 🚀 HOW TO ADD YOUR PROJECTS ONE BY ONE:
@@ -33,6 +34,17 @@ const projectsData = [
   },
   {
     id: 3,
+    title: "NovaCity OS - Smart City Portal",
+    category: "Full Stack",
+    description: "An advanced Smart City Management System and portal designed for urban harmony, real-time civic monitoring, infrastructure tracking, and automated citizen services.",
+    image: novacityLogo,
+    tech: ["React", "Tailwind CSS", "Smart City", "Dashboard", "Vercel"],
+    github: "#",
+    live: "https://urban-harmony-hub.vercel.app/",
+    featured: true
+  },
+  {
+    id: 4,
     title: "E-Commerce Suite & Analytics",
     category: "Full Stack",
     description: "A comprehensive e-commerce dashboard featuring real-time inventory tracking, payment gateway integration, and animated sales analytics.",
@@ -43,7 +55,7 @@ const projectsData = [
     featured: true
   },
   {
-    id: 4,
+    id: 5,
     title: "AI Video & Portfolio Generator",
     category: "Web App",
     description: "An AI-powered platform allowing users to generate stunning video portfolios from custom prompts and resume data with automated cloud rendering.",
@@ -54,7 +66,7 @@ const projectsData = [
     featured: true
   },
   {
-    id: 5,
+    id: 6,
     title: "Real-time Collaborative Workspace",
     category: "Full Stack",
     description: "A cloud workspace app featuring live multi-user editing, video rooms, interactive whiteboards, and instant Kanban board sync.",
@@ -65,7 +77,7 @@ const projectsData = [
     featured: false
   },
   {
-    id: 6,
+    id: 7,
     title: "Modern FinTech Banking App",
     category: "UI/UX",
     description: "A sleek, dark-mode financial dashboard design with custom interactive charts, crypto tracking, and instant peer-to-peer transfers.",
