@@ -1,68 +1,70 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-// Adjusted import path for the video
-import heroVideo from '../assets/hero video/Developer_introduces_self_and_sk…_202606051918.mp4';
+import heroImage from '../assets/about/tushar_cartoon.jpg';
 
 const Hero = () => {
-  const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
-
   useEffect(() => {
     AOS.init({
       duration: 1000,
       once: true,
       easing: 'ease-out'
     });
-    // Video does NOT autoplay anymore
   }, []);
 
-  const toggleVideo = (e) => {
-    e.stopPropagation();
-    if (videoRef.current) {
-      if (videoRef.current.paused) {
-        videoRef.current.play();
-        setIsPlaying(true);
-      } else {
-        videoRef.current.pause();
-        setIsPlaying(false);
-      }
-    }
-  };
-
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-black">
-      {/* Background Video */}
-      <video
-        ref={videoRef}
-        loop
-        muted={isMuted}
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+    <section id="home" className="relative w-full min-h-screen overflow-hidden bg-[#ff2a2a] flex flex-col justify-end pt-24 md:pt-28 font-sans">
+      
+      {/* Decorative dark glow behind illustration */}
+      <div className="absolute right-0 top-1/4 w-80 h-80 md:w-[500px] md:h-[500px] bg-black/30 rounded-full blur-[100px] pointer-events-none z-0"></div>
+
+      {/* Right Side: Developer Illustration with Dramatic Vignette & Gradient Masking */}
+      <div 
+        data-aos="fade-left"
+        data-aos-delay="200"
+        className="absolute right-0 bottom-0 w-full md:w-[65%] lg:w-[55%] h-[75vh] md:h-[92vh] flex justify-end items-end z-10 pointer-events-none select-none overflow-hidden"
       >
-        <source src={heroVideo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+        {/* The Image */}
+        <img 
+          src={heroImage} 
+          alt="Tushar Sonar" 
+          className="w-full h-full object-cover object-top md:object-center transform scale-105 md:scale-110 translate-y-2 origin-center"
+        />
+
+        {/* Top Red Gradient Overlay (blends top of hair into red background) */}
+        <div className="absolute top-0 left-0 right-0 h-32 md:h-48 bg-gradient-to-b from-[#ff2a2a] via-[#ff2a2a]/80 to-transparent"></div>
+
+        {/* Bottom Red Gradient Overlay (blends lower jacket into red background) */}
+        <div className="absolute bottom-0 left-0 right-0 h-48 md:h-64 bg-gradient-to-t from-[#ff2a2a] via-[#ff2a2a]/90 to-transparent"></div>
+
+        {/* Left Red Gradient Overlay (blends shoulder into text section) */}
+        <div className="absolute top-0 bottom-0 left-0 w-48 md:w-80 bg-gradient-to-r from-[#ff2a2a] via-[#ff2a2a]/80 to-transparent"></div>
+
+        {/* Right Red Gradient Overlay (soft right edge) */}
+        <div className="absolute top-0 bottom-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#ff2a2a] via-[#ff2a2a]/60 to-transparent"></div>
+
+        {/* Inset Shadow for seamless corner feathering */}
+        <div className="absolute inset-0 shadow-[inset_0_0_80px_40px_#ff2a2a]"></div>
+      </div>
 
       {/* Content Container */}
-      <div className="absolute inset-0 z-20 px-6 pb-20 md:pb-[8%] md:px-12 max-w-7xl mx-auto flex flex-col md:flex-row justify-end md:justify-between items-start md:items-end text-left w-full">
+      <div className="relative z-20 px-6 pb-12 md:pb-0 md:px-12 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-end text-left w-full flex-1 min-h-[75vh] md:min-h-0">
         
         {/* Left Side: Text and Buttons */}
-        <div className="flex flex-col items-start text-left max-w-2xl w-full">
+        <div className="flex flex-col justify-center items-start text-left max-w-2xl w-full md:w-1/2 py-12 md:pb-28 relative z-20">
           {/* Main Heading */}
           <h1 
             data-aos="fade-up"
-            className="text-white text-3xl md:text-5xl font-bold mb-4 tracking-tight"
+            className="text-white text-4xl md:text-6xl font-black mb-4 tracking-tight leading-tight"
           >
-            Hi, I’m a <br /> <span className="text-transparent [-webkit-text-stroke:1.5px_black]">Full Stack Developer</span>
+            Hi, I’m a <br /> <span className="text-transparent [-webkit-text-stroke:1.5px_black] drop-shadow-sm">Full Stack Developer</span>
           </h1>
 
           {/* Subheading */}
           <p 
             data-aos="fade-up"
             data-aos-delay="200"
-            className="text-white text-sm md:text-lg font-semibold mb-8 max-w-md drop-shadow-md"
+            className="text-white text-base md:text-xl font-bold mb-8 max-w-lg drop-shadow-md leading-relaxed"
           >
             I build fast, scalable and modern web applications using React, Node.js and Tailwind CSS.
           </p>
@@ -71,43 +73,24 @@ const Hero = () => {
           <div 
             data-aos="fade-up"
             data-aos-delay="400"
-            className="flex flex-row flex-wrap items-center gap-3 w-full"
+            className="flex flex-row flex-wrap items-center gap-4 w-full"
           >
             {/* Primary Button */}
-            <button className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-md">
+            <a 
+              href="#projects"
+              className="px-6 py-3 text-sm md:text-base rounded-full bg-white text-black font-bold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg inline-block text-center"
+            >
               View My Work
-            </button>
+            </a>
             
             {/* Secondary Button - Glassmorphism style */}
-            <button className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-black/40 border border-white text-white font-semibold hover:bg-black/60 transition-all duration-300 backdrop-blur-md">
+            <a 
+              href="#contact"
+              className="px-6 py-3 text-sm md:text-base rounded-full bg-black/40 border border-white/80 text-white font-bold hover:bg-black/60 transition-all duration-300 transform hover:scale-105 backdrop-blur-md shadow-lg inline-block text-center"
+            >
               Contact Me
-            </button>
+            </a>
           </div>
-        </div>
-
-        {/* Right Side: Play Video Button */}
-        <div 
-          data-aos="zoom-in"
-          data-aos-delay="600"
-          className="mt-8 md:mt-0 flex flex-row md:flex-col items-center gap-2 md:gap-3 cursor-pointer group self-start md:self-auto"
-          onClick={toggleVideo}
-        >
-          <div className="w-12 h-12 md:w-20 md:h-20 rounded-full border border-white/30 bg-black/20 backdrop-blur-md flex justify-center items-center group-hover:scale-110 group-hover:bg-[#ff2a2a] transition-all duration-500 shadow-[0_0_30px_rgba(255,255,255,0.1)] group-hover:shadow-[0_0_40px_rgba(255,42,42,0.6)]">
-            {!isPlaying || isMuted ? (
-              // Play Icon
-              <svg className="w-5 h-5 md:w-8 md:h-8 text-white ml-0.5 md:ml-1" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            ) : (
-              // Pause Icon
-              <svg className="w-5 h-5 md:w-8 md:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-              </svg>
-            )}
-          </div>
-          <span className="text-white text-[10px] md:text-xs font-bold tracking-widest uppercase opacity-70 group-hover:opacity-100 transition-opacity">
-            {!isPlaying || isMuted ? "Play Reel" : "Pause"}
-          </span>
         </div>
       </div>
 
@@ -115,7 +98,7 @@ const Hero = () => {
       <div 
         data-aos="fade-up"
         data-aos-delay="800"
-        className="hidden md:block absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 pointer-events-none"
+        className="hidden md:block absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 pointer-events-none"
       >
         <div className="animate-bounce">
           <svg 
