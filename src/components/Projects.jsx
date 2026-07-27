@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import amyronLogo from '../assets/projects/amyron.png';
 import smartpayLogo from '../assets/projects/smartpay.png';
 import novacityLogo from '../assets/projects/novacity.png';
+import sparshLogo from '../assets/projects/sparsh.jpg';
+import gravity24Logo from '../assets/projects/gravity24.png';
 
 // ==========================================
 // 🚀 HOW TO ADD YOUR PROJECTS ONE BY ONE:
@@ -45,6 +47,28 @@ const projectsData = [
   },
   {
     id: 4,
+    title: "Sparsh Skin Care Clinic - Advanced Dermatology",
+    category: "Web App",
+    description: "A state-of-the-art clinical dermatology and aesthetic skincare portal built for Dr. Darshan Vijay Patel (DDV, FMS), featuring interactive treatment guides, appointment scheduling, and quiet luxury aesthetics.",
+    image: sparshLogo,
+    tech: ["React 19", "TanStack Start", "TypeScript", "Tailwind CSS", "Vite"],
+    github: "https://github.com/tusharr-gif/sparsh-elevated",
+    live: "https://sparsh-clinic-ten.vercel.app/",
+    featured: true
+  },
+  {
+    id: 5,
+    title: "Gravity 24 Sport Gym - Elite Fitness Platform",
+    category: "Full Stack",
+    description: "A premier sports gym and athletic training web application featuring membership management, interactive workout schedules, trainer profiles, and high-energy animations.",
+    image: gravity24Logo,
+    tech: ["React 19", "TanStack Start", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    github: "https://github.com/tusharr-gif/gravity-24-elite",
+    live: "https://gravity-24-sport.vercel.app/",
+    featured: true
+  },
+  {
+    id: 6,
     title: "E-Commerce Suite & Analytics",
     category: "Full Stack",
     description: "A comprehensive e-commerce dashboard featuring real-time inventory tracking, payment gateway integration, and animated sales analytics.",
@@ -55,7 +79,7 @@ const projectsData = [
     featured: true
   },
   {
-    id: 5,
+    id: 7,
     title: "AI Video & Portfolio Generator",
     category: "Web App",
     description: "An AI-powered platform allowing users to generate stunning video portfolios from custom prompts and resume data with automated cloud rendering.",
@@ -66,7 +90,7 @@ const projectsData = [
     featured: true
   },
   {
-    id: 6,
+    id: 8,
     title: "Real-time Collaborative Workspace",
     category: "Full Stack",
     description: "A cloud workspace app featuring live multi-user editing, video rooms, interactive whiteboards, and instant Kanban board sync.",
@@ -77,7 +101,7 @@ const projectsData = [
     featured: false
   },
   {
-    id: 7,
+    id: 9,
     title: "Modern FinTech Banking App",
     category: "UI/UX",
     description: "A sleek, dark-mode financial dashboard design with custom interactive charts, crypto tracking, and instant peer-to-peer transfers.",
